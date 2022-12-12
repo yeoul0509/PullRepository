@@ -1,1 +1,21 @@
-wehiiiiiiiiiiiiiiiiiiiiii
+
+import random
+def swap(x, i, j):
+    x[i], x[j] = x[j], x[i]
+'''
+    temp = x[i]
+    x[i] = x[j]
+    x[j] = temp
+'''
+def bubbleSort(x):
+    for i in range(len(x)-1):
+        for j in range(len(x)-i-1):
+            if x[j] > x[j+1]:
+                swap(x, j, j+1)
+
+l1 = list(range(10))
+print(l1)
+random.shuffle(l1)
+print(l1)
+bubbleSort(l1)
+print(l1)
