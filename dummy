@@ -1,1 +1,19 @@
-test file
+import tkinter as tk
+
+def ProcessReturn(event):
+    print("Enter 키 클릭")
+def ProcessKey(event):
+    print(f"keysym: {event.keysym} char: {event.char} keycode: {event.keycode}")
+def ProcessCtrlShiftP(event):
+    print("Control + Shift + P 키 클릭")
+
+window = tk.Tk()
+text = tk.Text(window)      # 텍스트박스 widget(여러 줄 입력)
+text.pack()
+
+text.bind("<Key>", ProcessKey)
+text.bind("<Return>", ProcessReturn)
+text.bind("<Control-Shift-P>", ProcessCtrlShiftP)
+
+window.mainloop()
+
